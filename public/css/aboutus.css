@@ -1,0 +1,17 @@
+#about-page1{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color10);
+}
+
+#about-page2{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color7);
+}
+
+#about-page3{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color7);
+}
