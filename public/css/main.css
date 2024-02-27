@@ -17,6 +17,7 @@
 
 body{
     height: 1000px;
+    
 }
 
 a{
@@ -28,10 +29,13 @@ a{
     height: var(--navbar_height);
     background-color: var(--color6);
 
+    overflow: hidden;
+    top: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: fixed;
+    position: fixed ;
+
 }
 
 #nav-logo{
@@ -92,6 +96,11 @@ a{
 
     font-family: 'Inter';
     float: right;
+}
+
+/* Prevent overlapping with the navbar */
+.main {
+    margin-top: 80px; 
 }
 
 
