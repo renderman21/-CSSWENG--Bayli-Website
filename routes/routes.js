@@ -9,5 +9,7 @@ app.get("/", controller.getAboutUs)
 
 app.get("/home", controller.getHome)
 
+app.get("/product", controller.getProduct)
+
 
 module.exports = app
