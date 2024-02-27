@@ -8,6 +8,10 @@ const controller = {
 
     getHome: function(req,res){
         res.render("home")
+    },
+
+    getProduct: function (req, res){
+        res.render("product");
     }
 
 }
