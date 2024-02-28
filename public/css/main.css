@@ -122,6 +122,18 @@ a{
     border-radius: 15px;
 }
 
+#nav-magglass{
+    width:400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#nav-magglass > a {
+    color: var(--color1);
+    scale: 1.1;
+}
+
 
 
 
