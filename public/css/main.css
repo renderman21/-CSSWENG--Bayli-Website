@@ -47,7 +47,7 @@ a{
     top: 0;
     display: flex;
     flex-wrap: wrap;
-    
+    padding:10px;
     position: fixed;
 
 }
@@ -61,7 +61,6 @@ a{
 #nav-logo{
     width: 200px;
     height: 100%;
-    margin-top: 5px 0;
     margin-left: 90px;
     
 
@@ -70,7 +69,6 @@ a{
 
 #nav-logo img{
     scale: 70%;
-    margin: 5px;
 }
 
 
@@ -81,13 +79,15 @@ a{
     display: flex;
 }
 
+#nav-search{
+    margin: auto;
+}
+
 #nav-search input{
     width: 400px;
     height: calc(var(--navbar_height)/2);
     background-color: var(--color8);
     
-    margin-top: calc(var(--navbar_height)/4);
-    margin-right: 0px;
     padding-left: 15px;
 
     float: right;
@@ -95,8 +95,7 @@ a{
 
 #nav-options{
     width: fit-content;
-    height: 100%;
-
+    margin:auto;
     margin-left: 30px;
     float: right;
     
@@ -119,7 +118,6 @@ a{
 #nav-options ul li a{
     font-size: larger;
     padding: 15px 30px;
-    line-height: var(--navbar_height);
     border: 0px solid;
     border-radius: 15px;
 }
