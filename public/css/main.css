@@ -80,17 +80,53 @@ a{
 }
 
 #nav-search{
-    margin: auto;
+    width: 40%;
+    margin: 10 0 0 10;
+    text-align: center;
+    
+    background-color: red;
+
 }
 
-#nav-search input{
-    width: 400px;
-    height: calc(var(--navbar_height)/2);
-    background-color: var(--color8);
+#search-button{
+    height: 50%;
+    width: 50px;
+    margin-top: 1%;
+    cursor: pointer;
     
-    padding-left: 15px;
+    position: absolute;
 
-    float: right;
+    background-color: yellow;
+}
+
+#search-input{
+    height: 70%;
+    width: 0%; /* starts as invisible */
+    margin-top: 3%;
+    padding-left: 0px;
+    border-radius: 25px;
+
+
+    transition: all 0.5s ease-in-out;
+
+}
+
+#search-button:focus ~ #search-input{
+    width: 90%;
+    background-color: white;
+    margin-left: 10px;
+
+    transition: all 500ms cubic-bezier(.58, 0, .19, 1);
+
+}
+
+/* needs to be the same as the above code */
+#search-input:focus{
+    width: 90%;
+    background-color: white;
+    margin-left: 10px;
+
+    transition: all 500ms cubic-bezier(.58, 0, .19, 1);
 }
 
 #nav-options{
@@ -133,8 +169,6 @@ a{
     color: var(--color1);
     scale: 1.1;
 }
-
-
 
 
 
