@@ -1,4 +1,4 @@
-<title>Product Page</title>
+
 
 <body>
 
@@ -8,46 +8,32 @@
         <div id="product-base">
             
             <span id="left-box">
-                {{>sidebox}}
+                {{#each (getPicture Product)}}
+                    {{>sidebox this}}
+                {{/each}}
             </span>
 
             <span id ="main-box"> 
                 <div> 
-                    
+                    <img src="{{getFocusedPicture Product}}">
 
                 </div>
             </span>
 
             <span id = "right-box">
                 <div id="product-name">
-                    <h1>Bayli Conditioning Shampoo</h1>
+                    <h1>{{ProductName}}</h1>
                 </div>
 
                 <hr>
 
                 <div id="price-box">
-                    <h1>Price: P10000</h1>
+                    <h1>Price: {{getPrice ProductPrice}}&#8369;</h1>
                 </div>
 
                 <div id = "description-box"> 
-                    <p>
-                        According to all known laws of aviation,
-                        there is no way a bee
-                        should be able to fly.
-
-                        <br>
-                        <br>
-                        
-                        Its wings are too small to get
-                        its fat little body off the ground.
-
-                        <br>
-                        <br>
-
-                        
-                        The bee, of course, flies anyway because bees don't care
-                        what humans think is impossible.
-
+                    <p id="product-desc">
+                        {{ProductDesc}}
                     </p>
                 </div>
 
@@ -91,4 +77,5 @@
         </div>
     </div>
 </body>
+
 

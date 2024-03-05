@@ -10,8 +10,15 @@ const controller = {
         res.render("home")
     },
 
-    getProduct: function (req, res){
-        res.render("product");
+    // This has been set to the first product. Change it when we are ready.
+    getProduct: async function (req, res){
+        const products = await db.getAllProducts()
+        res.render("product", {
+            Product: products[0], 
+            ProductName: products[0]["Product Name"],
+            ProductPrice: products[0]["Product Price"],
+            ProductDesc: products[0]["Product Description"]
+        });
     }
 
 }

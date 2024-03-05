@@ -7,8 +7,7 @@ const dotenv = require("dotenv")
 dotenv.config()
 const port = process.env.PORT
 const hostname = process.env.HOSTNAME
-const local_db_url = process.env.LOCAL_DB_URL
-const online_db_url = process.env.ONLINE_DB_URL
+
 
 const express = require("express")
 
@@ -25,7 +24,39 @@ const app = express()
 // default templating file is main.hbs
 app.engine("hbs", exphbs.engine({
     defaultLayout: "main",
-    extname: ".hbs"
+    extname: ".hbs",
+    helpers:{
+        // This gets the pictures object into an array
+        getPicture: function(obj){
+            var arr = []
+            for (var key in obj.Picture){
+                var newObj = {picture: obj.Picture[key], picType: key};
+                arr.push(newObj);
+            }
+
+            return arr
+        },
+        // This will only get one picture (this is static)
+        getFocusedPicture: function(obj){
+            var arr = []
+            for (var key in obj.Picture){
+                var newObj = {picture: obj.Picture[key], picType: key};
+                arr.push(newObj);
+            }
+
+            return arr[0].picture
+        }, 
+        // Parse the price object into a readable one, depending on the size. NOTE: this is static
+        getPrice: function(price){
+            var arr = []
+            for (var key in price){
+                var newObj = {size: key, price: price[key]}
+                arr.push(newObj)
+            }
+
+            return arr[0].price
+        }
+    }
 }))
 
 // view engine as hbs
@@ -37,9 +68,6 @@ app.use(express.urlencoded({extended: true}))
 // static files in public folder like html, css, js
 app.use(express.static("public"))
 
-
-// connects to the database
-//db.connect(local_db_url)
 
 // routes for the webpages
 app.use("/", routes)
@@ -54,5 +82,7 @@ app.listen(port, function(){
     console.log("Server running at: ")
     console.log("PORT: " + port)
     console.log("http://" + hostname + ":" + port)
+    db.connectToDB()
+
 })
 
