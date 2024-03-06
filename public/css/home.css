@@ -1,0 +1,45 @@
+#home-base{
+
+    display: flex;
+    flex-direction: column;
+}
+
+#home-page{
+    width: 100%;
+    height: calc(100vh - var(--navbar_height));
+    background-color: white;
+
+    /*
+    background-image: url("../photos/cat_dog.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    */
+
+    display: flex;
+    overflow: auto;
+}
+
+#home-page #page-left{
+    width: 50%;
+    height: 100%;
+    padding: 120px 80px;
+    
+}
+
+#home-page #page-left h1{
+    color: var(--color11);
+    font-size: 75px;
+    font-weight: bolder;
+}
+
+#home-page #page-left p{
+    color: gray;
+    font-weight: 500;
+}
+
+#home-page #page-right{
+    width: 50%;
+    height: 100%;
+    
+}
