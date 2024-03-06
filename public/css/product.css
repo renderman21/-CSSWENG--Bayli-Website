@@ -75,6 +75,11 @@
     font-size: 40px;
     color: var(--product-name-color);
     font-weight: 600;
+    letter-spacing: 5px;
+}
+
+#desc > b{
+    font-weight: bold;
 }
 hr {
     border: 0;

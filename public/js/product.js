@@ -6,8 +6,9 @@ window.onload = function(){
     const doc = parser.parseFromString(toParse, 'text/html');
 
     const parsedDesc = document.createElement('p');
-    parsedDesc.innerHTML = doc.body.innerHTML;
 
+    parsedDesc.innerHTML = doc.body.innerHTML;
+    parsedDesc.setAttribute('id', 'desc');
     descDiv.replaceChildren();
 
     descDiv.appendChild(parsedDesc);
