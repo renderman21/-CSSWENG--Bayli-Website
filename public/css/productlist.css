@@ -1,5 +1,6 @@
 :root{
     --productlist_options_height: 50px;
+    --view-button-color: #535AB4;
 }
 
 #productlist-base{
@@ -18,10 +19,10 @@
 
 #productlist-main{
     width: 100%;
-
+    
+    padding: 70px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     
 }
 
@@ -31,7 +32,6 @@
 
     margin-top: 40px;
     margin-bottom: 70px;
-    margin-left: 40px;
     margin-right: 40px;
 
     display: flex;
@@ -48,6 +48,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--color10);
+    padding: 20px;
 
     border-radius: 5px;
     
@@ -56,14 +57,60 @@
 .productbox-right{
     width: 500px;
     height: 100%;
-    
+    padding: 10px;
+    padding-bottom: 5px;
+    background-color: var(--color12);
+    display: flex;
+    flex-direction: column;
     margin-left: 20px;
 }
 
-.productbox-right div{
+#productlist-name{
     width: 100%;
-    height: 100%;
-    background-color: #efefef;
+    font-size: 25px;
+    color: var(--product-name-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
 
-    border-radius: 5px;
+#productlist-desc{
+    width: 100%;
+    text-align: justify;
+    color: var(--desc-color);
+    margin-bottom: 40px;
+    flex-grow: 2;
+}
+
+#productlist-bottom{
+    flex-grow: 1;
+}
+
+#productlist-infobox{
+    float: left;
+    height: 100%;
+    width: 50%
+}
+
+#productlist-buttonbox{
+    float:right;
+    height:100%;
+    width: 50%;
+}
+
+#productlist-infobox > div{
+    margin: 5px;
+    color: var(--desc-color);
+}
+
+#productlist-viewbutton{
+    background-color: var(--view-button-color);
+    height:30px;
+    width: 50%;
+    display: flex;
+    float:right;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color:white;
 }

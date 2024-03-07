@@ -26,36 +26,53 @@ app.engine("hbs", exphbs.engine({
     defaultLayout: "main",
     extname: ".hbs",
     helpers:{
-        // This gets the pictures object into an array
-        getPicture: function(obj){
-            var arr = []
-            for (var key in obj.Picture){
-                var newObj = {picture: obj.Picture[key], picType: key};
-                arr.push(newObj);
-            }
+            // This gets the pictures object into an array
+            getPicture: function(obj){
+                var arr = []
+                for (var key in obj.Picture){
+                    var newObj = {picture: obj.Picture[key], picType: key};
+                    arr.push(newObj);
+                }
+        
+                return arr
+            },
+            // This will only get one picture (this is static)
+            getFocusedPicture: function(obj){
+                var arr = []
+                for (var key in obj.Picture){
+                    var newObj = {picture: obj.Picture[key], picType: key};
+                    arr.push(newObj);
+                }
+        
+                return arr[0].picture
+            }, 
+            // Parse the price object into a readable one, depending on the size. NOTE: this is static
+            getPrice: function(price){
+                var arr = []
+                for (var key in price){
+                    var newObj = {size: key, price: price[key]}
+                    arr.push(newObj)
+                }
+        
+                return arr[0].price
+            },
+            allProductsToArray: function(products){
+                var arr = []
+        
+                for (var key in products){
+                    arr.push(products[key])
+                }
+                return arr;
+            },
 
-            return arr
-        },
-        // This will only get one picture (this is static)
-        getFocusedPicture: function(obj){
-            var arr = []
-            for (var key in obj.Picture){
-                var newObj = {picture: obj.Picture[key], picType: key};
-                arr.push(newObj);
-            }
+            getDisplayPicture: function(picture){
+                var arr = []
+                for(var key in picture){
+                    arr.push(picture[key])
+                }
 
-            return arr[0].picture
-        }, 
-        // Parse the price object into a readable one, depending on the size. NOTE: this is static
-        getPrice: function(price){
-            var arr = []
-            for (var key in price){
-                var newObj = {size: key, price: price[key]}
-                arr.push(newObj)
+                return arr[0]
             }
-
-            return arr[0].price
-        }
     }
 }))
 

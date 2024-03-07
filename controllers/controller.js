@@ -18,8 +18,12 @@ const controller = {
         res.render("aboutus")
     },
 
-    getProductList: function (req, res){
-        res.render("productlist");
+    getProductList: async function (req, res){
+        const products = await db.getAllProducts();
+        // Turn this into an array of objects
+        res.render("productlist", {
+            Products: products
+        });
     }, 
       // This has been set to the first product. Change it when we are ready.
     getProduct: async function (req, res){

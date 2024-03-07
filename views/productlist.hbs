@@ -14,45 +14,10 @@
 
 
             <div id="productlist-main">
-                <div class="productbox">
-                    <div class="productbox-left">
-                        <div></div>
-                    </div>
-
-                    <div class="productbox-right">
-                        <div></div>
-                    </div>
-                </div>
-
-                <div class="productbox">
-                    <div class="productbox-left">
-                        <div></div>
-                    </div>
-
-                    <div class="productbox-right">
-                        <div></div>
-                    </div>
-                </div>
-
-                <div class="productbox">
-                    <div class="productbox-left">
-                        <div></div>
-                    </div>
-
-                    <div class="productbox-right">
-                        <div></div>
-                    </div>
-                </div>
-
-                <div class="productbox">
-                    <div class="productbox-left">
-                        <div></div>
-                    </div>
-
-                    <div class="productbox-right">
-                        <div></div>
-                    </div>
-                </div>
+                {{#each (allProductsToArray Products)}}
+                    {{> productbox this}}
+                {{/each}}
+                
             </div>
 
             
