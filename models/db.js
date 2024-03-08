@@ -25,7 +25,7 @@ const productSchema = mongoose.Schema({
 const Product = mongoose.model("Product", productSchema, "Products");
 
 async function getAllProducts(){
-    return await Product.find({})
+    return await Product.find({}).lean();
 }
 
 module.exports = {
