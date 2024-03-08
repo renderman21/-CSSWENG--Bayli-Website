@@ -72,7 +72,8 @@
 }
 
 #product-name > h1{
-    font-size: 40px;
+    font-size: 30px;
+    text-align: center;
     color: var(--product-name-color);
     font-weight: 600;
 }
@@ -101,6 +102,11 @@ hr {
     text-align: justify;
     color: var(--desc-color);
     margin-bottom: 40px;
+}
+
+#description-box h1{
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 #size-box{
@@ -201,6 +207,20 @@ hr {
     color: white;
     font-weight: bolder;
     word-spacing: 5px;
+}
+
+#product-desc {
+    padding: 5px;
+}
+
+#product-additional-desc{
+    padding: 10px;
+}
+
+
+
+#product-additional-desc  b{
+    font-weight: bold;
 }
 
 

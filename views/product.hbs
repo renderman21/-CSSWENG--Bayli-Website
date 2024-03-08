@@ -22,19 +22,29 @@
 
             <span id = "right-box">
                 <div id="product-name">
-                    <h1>{{ProductName}}</h1>
+                    <h1>{{Product.[Product Name]}}</h1>
                 </div>
 
                 <hr>
 
                 <div id="price-box">
-                    <h1>Price: {{getPrice ProductPrice}}&#8369;</h1>
+                    <h1>Price: {{getPrice Product.[Product Price]}}&#8369;</h1>
                 </div>
 
-                <div id = "description-box"> 
+                <div id = "description-box">
+                    <h1> Description: </h1> 
                     <div id="product-desc">
                         <p>
-                            {{ProductDesc}}
+                            {{Product.[Product Description]}}
+                        </p>
+                    </div>
+
+                    {{!-- Implement drop down --}}
+                    <button onclick="dropDownInfo()"><h1> More Information: </h1></button>
+                    
+                    <div id="product-additional-desc">
+                        <p>
+                            {{Product.[Product Additional Info]}}
                         </p>
                     </div>
                 </div>
