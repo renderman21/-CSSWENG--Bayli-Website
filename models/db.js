@@ -16,6 +16,7 @@ function connectToDB(){
 const productSchema = mongoose.Schema({
     "Product Name": String, 
     "Product Description": String,
+    "Product Additional Info": String,
     "Product Price": Object,
     "Product Type": Number,
     "Product Size": Object,
