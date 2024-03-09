@@ -9,7 +9,6 @@ const controller = {
         res.render("home")
     },
 
-
     getProduct: function (req, res){
         res.render("product");
     },
@@ -25,12 +24,17 @@ const controller = {
             Products: products
         });
     }, 
-      // This has been set to the first product. Change it when we are ready.
+      // This has been set to the first product. Change it when we are ready. (YES THIS IS SIMILAR TO THE BOTTOM OK)
     getProduct: async function (req, res){
         const products = await db.getAllProducts()
         res.render("product", {
-            Product: products[0]
+            Product: products[3]
         });
+    }, 
+    getProductTest: async function(req,res){
+
+        const product = await db.getProduct(req.params.id);
+        res.send(product);
     }
 
 }
