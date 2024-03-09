@@ -1,3 +1,4 @@
+
 // Parse the description box
 window.onload = function () {
     const parser = new DOMParser();
@@ -46,13 +47,51 @@ function dropDownInfo() {
 
 }
 
-function changeProductSize(size) {
+async function fetchProduct(id){
+    var product;
+
+    await fetch(`/get-product/${id}`)
+    .then((response) => {return response.text()})
+    .then((data) => {
+        product = data;
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+
+    return JSON.parse(product);
+}
+
+async function changeProductSize(size, id) {
     // Change Image Size
     const newImageSrc = document.getElementById(size + "Picture");
     const focusPicture = document.getElementById('focusedPicture');
     focusPicture.setAttribute('src', newImageSrc.getAttribute('src'));
 
-    // TODO: Update the displayed price
+    let getSize; 
+    switch (size) {
+        case 'L':
+            getSize = 'Large';
+            break;
+        case 'M':
+            getSize = 'Medium';
+            break;
+        case 'S':
+            getSize = 'Small';
+            break;
+    }
+    
+    var retProduct = await fetchProduct(id)
+    console.log(retProduct[0]['Product Price'])
+    const priceBox = document.getElementById('price');
+    priceBox.innerText = retProduct[0]['Product Price'][getSize];
+
+    // Set back to 1 on quantity
+    const qA = document.getElementById('quantity-amount');
+    const p = document.createElement('p');
+    p.innerText = 1;
+    qA.replaceChildren();
+    qA.appendChild(p);
 }
 
 
@@ -64,15 +103,24 @@ function increment() {
     qA.replaceChildren();
     qA.appendChild(p)
 
+    const price = document.getElementById('price');
+    var estimate = Number(price.innerText) * number;
+    price.innerText = estimate;
+
 }
 
 function decrement() {
     const qA = document.getElementById('quantity-amount');
-    var number = Number(qA.innerText) - 1;
-
+    var number = Number(qA.innerText);
     if(number > 0){
+
+        const price = document.getElementById('price');
+        var estimate = Number(price.innerText) / number;
+        price.innerText = estimate;
+
         const p = document.createElement('p');
-        p.innerText = number;
+        number -= 1;
+        p.innerText = number ;
         qA.replaceChildren();
         qA.appendChild(p)
     }
