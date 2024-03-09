@@ -1,5 +1,4 @@
 
-
 <body>
 
     {{>navbar}}
@@ -15,7 +14,7 @@
 
             <span id ="main-box"> 
                 <div> 
-                    <img src="{{getFocusedPicture Product}}">
+                    <img id='focusedPicture' src="{{getFocusedPicture Product}}">
 
                 </div>
             </span>
@@ -28,7 +27,7 @@
                 <hr>
 
                 <div id="price-box">
-                    <h1>Price: {{getPrice Product.[Product Price]}}&#8369;</h1>
+                    <h1>Price: &#8369;{{getPrice Product.[Product Price]}}</h1>
                 </div>
 
                 <div id = "description-box">
@@ -40,11 +39,11 @@
                     </div>
 
                     {{!-- Implement drop down --}}
-                    <div id="more-info-dropdown">
-                        <button onclick="dropDownInfo()"><h1> More Information </h1></button>
-                        <span style="float:right;" id="arrow-span">
-                            <i class="arrow down"></i>
-                        </span>
+                    <div id="more-info-dropdown" onclick="dropDownInfo()">
+                            <h1> More Information </h1>
+                            <span style="margin-left:10px;" id="arrow-span">
+                                <i class="arrow down"></i>
+                            </span>
                     </div>
                     
                     <div id="product-additional-desc">
@@ -56,7 +55,24 @@
 
                 {{!-- The underline doesn't show but you get the gist --}}
                 <div id ="size-box">
-                    <p>Size: <u>S</u> M L</p>
+                    <p>
+                        Size: 
+                    
+                        {{#with Product.[Product Size]}}
+                            {{#if Large}}
+                                <button id="large" onclick="changeProductSize(l)"> {{Large.Size}} {{Large.Unit}} </button>
+                            {{/if}}
+
+                            {{#if Medium}}
+                                <button id="medium" onclick="changeProductSize(m)"> {{Medium.Size}} {{Medium.Unit}} </button>
+                            {{/if}}
+
+                            {{#if Small}}
+                                <button id="small" onclick="changeProductSize(s)"> {{Small.Size}} {{Small.Unit}} </button>
+                            {{/if}}
+                        {{/with}}
+                    </p>
+                    
                 </div>
 
                 <div id="quantity-box">

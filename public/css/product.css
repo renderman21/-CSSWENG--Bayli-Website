@@ -11,18 +11,6 @@
     --arrow-color: #757575;
 }
 
-@keyframes levitate{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-
-}
 
 #product-base {
     padding-top: 30px;
@@ -241,3 +229,8 @@ hr {
 }
 
 
+#more-info-dropdown {
+    width: 100;
+    display: flex;
+
+}
