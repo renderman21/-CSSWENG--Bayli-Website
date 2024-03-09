@@ -60,15 +60,15 @@
                     
                         {{#with Product.[Product Size]}}
                             {{#if Large}}
-                                <button id="large" onclick="changeProductSize('L')"> {{Large.Size}} {{Large.Unit}} </button>
+                                <button id="large" onclick="changeProductSize('L', '{{../Product._id}}')"> {{Large.Size}} {{Large.Unit}} </button>
                             {{/if}}
 
                             {{#if Medium}}
-                                <button id="medium" onclick="changeProductSize('M')"> {{Medium.Size}} {{Medium.Unit}} </button>
+                                <button id="medium" onclick="changeProductSize('M', '{{../Product._id}}')"> {{Medium.Size}} {{Medium.Unit}} </button>
                             {{/if}}
 
                             {{#if Small}}
-                                <button id="small" onclick="changeProductSize('S')"> {{Small.Size}} {{Small.Unit}} </button>
+                                <button id="small" onclick="changeProductSize('S', '{{../Product._id}}')"> {{Small.Size}} {{Small.Unit}} </button>
                             {{/if}}
                         {{/with}}
                     </p>
