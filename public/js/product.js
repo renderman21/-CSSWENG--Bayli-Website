@@ -29,11 +29,19 @@ function dropDownInfo() {
     const productAddDesc = document.getElementById('product-additional-desc');
     const p = (productAddDesc.childNodes)[0];
 
-    if (p.style.display == 'none'){
-        p.style.display = 'inline'
+    const arrowSpan = document.getElementById('arrow-span');
+    const i = (arrowSpan.childNodes)[1];
+    console.log(i)
+
+    if (p.style.display == 'none' || i.className == 'down' ){
+        p.style.display = 'inline';
+        i.classList.remove('down');
+        i.classList.add('up');
     }
-    else{
-        p.style.display = 'none'
+    else if(p.style.display == 'inline' || i.className == 'up'){
+        p.style.display = 'none';
+        i.classList.remove('up');
+        i.classList.add('down');
     }
     
 }

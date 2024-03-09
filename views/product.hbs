@@ -40,7 +40,12 @@
                     </div>
 
                     {{!-- Implement drop down --}}
-                    <button onclick="dropDownInfo()"><h1> More Information: </h1></button>
+                    <div id="more-info-dropdown">
+                        <button onclick="dropDownInfo()"><h1> More Information </h1></button>
+                        <span style="float:right;" id="arrow-span">
+                            <i class="arrow down"></i>
+                        </span>
+                    </div>
                     
                     <div id="product-additional-desc">
                         <p>
