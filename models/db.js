@@ -29,7 +29,14 @@ async function getAllProducts(){
     return await Product.find({}).lean();
 }
 
+async function getProduct(id){
+    return await Product.find({
+        _id: id
+    }).lean();
+}
+
 module.exports = {
     connectToDB,
-    getAllProducts
+    getAllProducts,
+    getProduct
 }
