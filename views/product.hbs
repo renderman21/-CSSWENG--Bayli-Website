@@ -15,7 +15,6 @@
             <span id ="main-box"> 
                 <div> 
                     <img id='focusedPicture' src="{{getFocusedPicture Product}}">
-
                 </div>
             </span>
 
@@ -26,8 +25,9 @@
 
                 <hr>
 
+                {{!-- TODO: Revise this --}}
                 <div id="price-box">
-                    <h1>Price: &#8369;{{getPrice Product.[Product Price]}}</h1>
+                    <h1>Price: &#8369; <span id="price">{{getPrice Product.[Product Price]}} </span></h1>
                 </div>
 
                 <div id = "description-box">
@@ -60,15 +60,15 @@
                     
                         {{#with Product.[Product Size]}}
                             {{#if Large}}
-                                <button id="large" onclick="changeProductSize(l)"> {{Large.Size}} {{Large.Unit}} </button>
+                                <button id="large" onclick="changeProductSize('L')"> {{Large.Size}} {{Large.Unit}} </button>
                             {{/if}}
 
                             {{#if Medium}}
-                                <button id="medium" onclick="changeProductSize(m)"> {{Medium.Size}} {{Medium.Unit}} </button>
+                                <button id="medium" onclick="changeProductSize('M')"> {{Medium.Size}} {{Medium.Unit}} </button>
                             {{/if}}
 
                             {{#if Small}}
-                                <button id="small" onclick="changeProductSize(s)"> {{Small.Size}} {{Small.Unit}} </button>
+                                <button id="small" onclick="changeProductSize('S')"> {{Small.Size}} {{Small.Unit}} </button>
                             {{/if}}
                         {{/with}}
                     </p>
@@ -81,7 +81,7 @@
                     </span>
                     <span id="quantity-counter">
 
-                        <span id="quantity-negative">
+                        <span onclick="decrement()"id="quantity-negative">
 
                             <p>-</p>
 
@@ -93,7 +93,7 @@
                             </p>
                         </span>
 
-                        <span id="quantity-positive">
+                        <span onclick="increment()"id="quantity-positive">
                             <p>+</p>
                         </span>
 

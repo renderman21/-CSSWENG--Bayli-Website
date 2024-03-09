@@ -33,15 +33,47 @@ function dropDownInfo() {
     const i = (arrowSpan.childNodes)[1];
     console.log(i)
 
-    if (p.style.display == 'none' || i.className == 'down' ){
+    if (p.style.display == 'none' || i.className == 'down') {
         p.style.display = 'inline';
         i.classList.remove('down');
         i.classList.add('up');
     }
-    else if(p.style.display == 'inline' || i.className == 'up'){
+    else if (p.style.display == 'inline' || i.className == 'up') {
         p.style.display = 'none';
         i.classList.remove('up');
         i.classList.add('down');
     }
-    
+
+}
+
+function changeProductSize(size) {
+    // Change Image Size
+    const newImageSrc = document.getElementById(size + "Picture");
+    const focusPicture = document.getElementById('focusedPicture');
+    focusPicture.setAttribute('src', newImageSrc.getAttribute('src'));
+
+    // TODO: Update the displayed price
+}
+
+
+function increment() {
+    const qA = document.getElementById('quantity-amount');
+    var number = Number(qA.innerText) + 1;
+    const p = document.createElement('p');
+    p.innerText = number;
+    qA.replaceChildren();
+    qA.appendChild(p)
+
+}
+
+function decrement() {
+    const qA = document.getElementById('quantity-amount');
+    var number = Number(qA.innerText) - 1;
+
+    if(number > 0){
+        const p = document.createElement('p');
+        p.innerText = number;
+        qA.replaceChildren();
+        qA.appendChild(p)
+    }
 }
