@@ -2,21 +2,19 @@
     
     
     <div class="productbox-left">
-        <a href="/product">
              <div>
                 <img src='{{getDisplayPicture Picture}}'>
             </div>
-        </a>
     </div>   
     
 
 
     <div class="productbox-right">
         <div id="productbox-name">
-            <h1><a href="/product">{{"Product Name"}}</a></h1>
+            <h1> {{"Product Name"}}</h1>
         </div>
 
-        <div id="productbox-desc">
+        <div class="productbox-desc" id="productbox-desc">
             <p>
                 {{"Product Description"}}
             </p>
@@ -25,14 +23,32 @@
         <div id="productbox-bottom">
             <span id="productbox-infobox">
                 <div>
-                    Size: S | M | L
+                    Size:
+                        {{#with [Product Size]}}
+                            {{#if [Large]}} 
+                                <span>{{[Large].[Size]}}{{[Large].[Unit]}}</span>
+                            {{/if}}
+                            {{#if [Medium]}} 
+                                <span>{{[Medium].[Size]}}{{[Medium].[Unit]}}</span>
+                            {{/if}}
+                            {{#if [Small]}} 
+                                <span> {{[Small].[Size]}}{{[Small].[Unit]}}</span>
+                            {{/if}}
+
+ 
+                        {{/with}}
                 </div>
                 <div>
-                    Price: (Small) - (Largest)
+                    {{!-- If there is another size variation --}}
+                    {{#if [Product Price].[Large]}}
+                    Price:  &#8369;{{[Product Price].[Small]}} -  &#8369;{{[Product Price].[Large]}}
+                    {{else}}
+                    Price:  &#8369;{{[Product Price].[Small]}}
+                    {{/if}}
                 </div>
             </span>
             <span id="productbox-buttonbox">
-                <a href="/product">
+                <a href="/product?id={{_id}}">
                     <div id="productbox-viewbutton"> View </div>
                 </a>
             </span>
