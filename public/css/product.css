@@ -1,6 +1,7 @@
 :root {
     --left-box-bg: #d9d9d9;
     --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --lighter-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.23);
     --product-name-color: #ec1454;
     --line-color: #D9D9D9;
     --desc-color: #757575;
@@ -33,6 +34,12 @@
     width: 100px;
     margin-bottom:50px;
     box-shadow: var(--box-shadow);
+    transition:all .2s ease-in-out;
+}
+
+#left-box > div:hover{
+    transform: scale(1.1);
+    box-shadow: var(--lighter-box-shadow);
 }
 
 #main-box {
@@ -102,6 +109,25 @@ hr {
     margin-bottom: 30px;
 }
 
+#size-box button{
+    margin-right:10px;
+    padding:5px;
+}
+
+#size-box button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#size-box button:focus{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+
 #quantity-box{
     display: flex;
     flex-direction: row;
@@ -136,6 +162,7 @@ hr {
 #quantity-negative:hover {
     background-color: var(--quantity-button-hover-color);
     color: white;
+    cursor: pointer;
 
 }
 
@@ -174,6 +201,7 @@ hr {
 #quantity-positive:hover {
     background-color: var(--quantity-button-hover-color);
     color: white;
+    cursor: pointer;
 }
 
 #quantity-positive > p{
@@ -232,5 +260,10 @@ hr {
 #more-info-dropdown {
     width: 100;
     display: flex;
+}
+
+#more-info-dropdown > h1:hover{
+    cursor: pointer;
+    transform: scale(1,1);
 
 }

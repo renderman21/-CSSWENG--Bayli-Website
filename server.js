@@ -30,9 +30,10 @@ app.engine("hbs", exphbs.engine({
             getPicture: function(obj){
                 var arr = []
                 for (var key in obj.Picture){
-                    var newObj = {picture: obj.Picture[key], picType: key};
+                    var newObj = {picture: obj.Picture[key], picType: key, id:obj._id};
                     arr.push(newObj);
                 }
+
         
                 return arr
             },

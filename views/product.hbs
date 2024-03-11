@@ -60,15 +60,15 @@
                     
                         {{#with Product.[Product Size]}}
                             {{#if Large}}
-                                <button id="large" onclick="changeProductSize('L', '{{../Product._id}}')"> {{Large.Size}} {{Large.Unit}} </button>
+                                <button id="large" class="size-button" onclick="changeProductSize('L', '{{../Product._id}}')"> {{Large.Size}}{{Large.Unit}} </button>
                             {{/if}}
 
                             {{#if Medium}}
-                                <button id="medium" onclick="changeProductSize('M', '{{../Product._id}}')"> {{Medium.Size}} {{Medium.Unit}} </button>
+                                <button id="medium" class="size-button" onclick="changeProductSize('M', '{{../Product._id}}')"> {{Medium.Size}}{{Medium.Unit}} </button>
                             {{/if}}
 
                             {{#if Small}}
-                                <button id="small" onclick="changeProductSize('S', '{{../Product._id}}')"> {{Small.Size}} {{Small.Unit}} </button>
+                                <button id="small" class="size-button" onclick="changeProductSize('S', '{{../Product._id}}')"> {{Small.Size}}{{Small.Unit}} </button>
                             {{/if}}
                         {{/with}}
                     </p>
@@ -100,9 +100,9 @@
                     </span>
                 </div>
 
-                <button id="store-button">
+                <a id="store-button" href="https://shopee.ph/baylimarketing">
                     <h1>GO TO STORE</h1>
-                </button>
+                </a>
 
 
             </span>

@@ -24,6 +24,7 @@ window.onload = function () {
     infoDiv.replaceChildren();
     infoDiv.appendChild(parsedInfo);
 
+
 }
 
 function dropDownInfo() {
@@ -32,7 +33,6 @@ function dropDownInfo() {
 
     const arrowSpan = document.getElementById('arrow-span');
     const i = (arrowSpan.childNodes)[1];
-    console.log(i)
 
     if (p.style.display == 'none' || i.className == 'down') {
         p.style.display = 'inline';
@@ -68,21 +68,62 @@ async function changeProductSize(size, id) {
     const focusPicture = document.getElementById('focusedPicture');
     focusPicture.setAttribute('src', newImageSrc.getAttribute('src'));
 
-    let getSize; 
+    let getSize;
+
     switch (size) {
         case 'L':
             getSize = 'Large';
+
             break;
         case 'M':
             getSize = 'Medium';
+
             break;
         case 'S':
             getSize = 'Small';
+
             break;
     }
-    
+
     var retProduct = await fetchProduct(id)
-    console.log(retProduct[0]['Product Price'])
+    const priceBox = document.getElementById('price');
+    priceBox.innerText = retProduct[0]['Product Price'][getSize];
+
+    // Set back to 1 on quantity
+    const qA = document.getElementById('quantity-amount');
+    const p = document.createElement('p');
+    p.innerText = 1;
+    qA.replaceChildren();
+    qA.appendChild(p);
+
+
+}
+
+async function changeProductSizeViaPic(size, id){
+    // Note: If there are review pics. Do not include it
+
+    const newImageSrc = document.getElementById(size);
+    const focusPicture = document.getElementById('focusedPicture');
+    focusPicture.setAttribute('src', newImageSrc.getAttribute('src'));
+
+    let getSize;
+
+    switch (size) {
+        case 'LPicture':
+            getSize = 'Large';
+
+            break;
+        case 'MPicture':
+            getSize = 'Medium';
+
+            break;
+        case 'SPicture':
+            getSize = 'Small';
+
+            break;
+    }
+
+    var retProduct = await fetchProduct(id);
     const priceBox = document.getElementById('price');
     priceBox.innerText = retProduct[0]['Product Price'][getSize];
 
