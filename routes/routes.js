@@ -18,5 +18,6 @@ app.get("/about-us", controller.getAboutUs)
 
 app.get("/product-list", controller.getProductList)
 
+app.get("/get-product/:id", controller.getProductTest);
 
 module.exports = app

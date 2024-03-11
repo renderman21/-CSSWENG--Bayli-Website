@@ -1,6 +1,7 @@
 :root {
     --left-box-bg: #d9d9d9;
     --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --lighter-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10), 0 6px 20px 0 rgba(0, 0, 0, 0.23);
     --product-name-color: #ec1454;
     --line-color: #D9D9D9;
     --desc-color: #757575;
@@ -8,20 +9,9 @@
     --quantity-amount-color: #E6E6E6;
     --store-button-color: #144068;
     --quantity-button-hover-color: black;
+    --arrow-color: #757575;
 }
 
-@keyframes levitate{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-
-}
 
 #product-base {
     padding-top: 30px;
@@ -44,6 +34,12 @@
     width: 100px;
     margin-bottom:50px;
     box-shadow: var(--box-shadow);
+    transition:all .2s ease-in-out;
+}
+
+#left-box > div:hover{
+    transform: scale(1.1);
+    box-shadow: var(--lighter-box-shadow);
 }
 
 #main-box {
@@ -72,7 +68,8 @@
 }
 
 #product-name > h1{
-    font-size: 40px;
+    font-size: 30px;
+    text-align: center;
     color: var(--product-name-color);
     font-weight: 600;
 }
@@ -103,9 +100,33 @@ hr {
     margin-bottom: 40px;
 }
 
+#description-box h1{
+    font-weight: bolder;
+    font-size: 20px;
+}
+
 #size-box{
     margin-bottom: 30px;
 }
+
+#size-box button{
+    margin-right:10px;
+    padding:5px;
+}
+
+#size-box button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#size-box button:focus{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
 
 #quantity-box{
     display: flex;
@@ -141,6 +162,7 @@ hr {
 #quantity-negative:hover {
     background-color: var(--quantity-button-hover-color);
     color: white;
+    cursor: pointer;
 
 }
 
@@ -179,6 +201,7 @@ hr {
 #quantity-positive:hover {
     background-color: var(--quantity-button-hover-color);
     color: white;
+    cursor: pointer;
 }
 
 #quantity-positive > p{
@@ -203,5 +226,44 @@ hr {
     word-spacing: 5px;
 }
 
+#product-desc {
+    padding: 5px;
+}
+
+#product-additional-desc{
+    padding: 10px;
+}
+
+#product-additional-desc  b{
+    font-weight: bold;
+}
 
 
+.arrow{
+    border: solid thin var(--arrow-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45def);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+
+#more-info-dropdown {
+    width: 100;
+    display: flex;
+}
+
+#more-info-dropdown > h1:hover{
+    cursor: pointer;
+    transform: scale(1,1);
+
+}
