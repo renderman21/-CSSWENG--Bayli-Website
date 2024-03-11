@@ -16,9 +16,8 @@ app.get("/product-list", controller.getProductList)
 
 app.get("/about-us", controller.getAboutUs)
 
-
 app.get("/product", controller.getProduct)
 
-app.get("/get-product/:id", controller.getProductTest);
+app.get("/get-product/:id", controller.fetchProduct);
 
 module.exports = app
