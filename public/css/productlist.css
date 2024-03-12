@@ -20,10 +20,18 @@
 
 #productlist-main{
     width: 100%;
-    
     padding: 70px;
-    display: flex;
-    flex-wrap: wrap;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    grid-auto-rows: minmax(100px, auto);
+    overflow: hidden;
+    
+
+    justify-items: center;
+    align-items: center;
+    
     
 }
 
@@ -33,7 +41,8 @@
 
     margin-top: 40px;
     margin-bottom: 70px;
-    margin-right: 40px;
+    margin-left: 40px;
+    margin-right: 10px;
 
     display: flex;
     
@@ -68,7 +77,7 @@
     margin-left: 20px;
 }
 
-#productlist-name{
+#productbox-name{
     width: 100%;
     font-size: 25px;
     color: var(--product-name-color);
@@ -76,7 +85,7 @@
     margin-bottom: 20px;
 }
 
-#productlist-desc{
+#productbox-desc{
     width: 100%;
     text-align: justify;
     color: var(--desc-color);
@@ -84,28 +93,32 @@
     flex-grow: 2;
 }
 
-#productlist-bottom{
+#productbox-desc  b{
+    font-weight: bold;
+}
+
+#productbox-bottom{
     flex-grow: 1;
 }
 
-#productlist-infobox{
+#productbox-infobox{
     float: left;
     height: 100%;
     width: 50%;
 }
 
-#productlist-buttonbox{
+#productbox-buttonbox{
     float:right;
     height:100%;
     width: 50%;
 }
 
-#productlist-infobox > div{
+#productbox-infobox > div{
     margin: 5px;
     color: var(--desc-color);
 }
 
-#productlist-viewbutton{
+#productbox-viewbutton{
     background-color: var(--view-button-color);
     height:30px;
     width: 50%;

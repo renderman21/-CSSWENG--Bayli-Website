@@ -9,10 +9,6 @@ const controller = {
         res.render("home")
     },
 
-    getProduct: function (req, res){
-        res.render("product");
-    },
-
     getAboutUs: function(req, res){
         res.render("aboutus")
     },
@@ -21,17 +17,20 @@ const controller = {
         const products = await db.getAllProducts();
         // Turn this into an array of objects
         res.render("productlist", {
-            Products: products
+            Products: products,
+            layout: 'productlist-layout'
         });
     }, 
       // This has been set to the first product. Change it when we are ready. (YES THIS IS SIMILAR TO THE BOTTOM OK)
     getProduct: async function (req, res){
-        const products = await db.getAllProducts()
+        let {id} = req.query
+        const product = await db.getProduct(req.query.id);
         res.render("product", {
-            Product: products[3]
+            Product: product[0],
+            layout: 'product-layout'
         });
     }, 
-    getProductTest: async function(req,res){
+    fetchProduct: async function(req,res){
 
         const product = await db.getProduct(req.params.id);
         res.send(product);

@@ -1,34 +1,56 @@
 <div class="productbox">
+    
+    
     <div class="productbox-left">
-        <div>
-            <img src='{{getDisplayPicture Picture}}'>
-        </div>
-    </div>
+             <div>
+                <img src='{{getDisplayPicture Picture}}'>
+            </div>
+    </div>   
+    
+
 
     <div class="productbox-right">
-        <div id="productlist-name">
+        <div id="productbox-name">
             <h1> {{"Product Name"}}</h1>
         </div>
 
-        <div id="productlist-desc">
+        <div class="productbox-desc" id="productbox-desc">
             <p>
-                We will revise the database na lang
+                {{"Product Description"}}
             </p>
         </div>
 
-        <div id="productlist-bottom">
-            <span id="productlist-infobox">
+        <div id="productbox-bottom">
+            <span id="productbox-infobox">
                 <div>
-                    Size: S | M | L
+                    Size:
+                        {{#with [Product Size]}}
+                            {{#if [Large]}} 
+                                <span>{{[Large].[Size]}}{{[Large].[Unit]}}</span>
+                            {{/if}}
+                            {{#if [Medium]}} 
+                                <span>{{[Medium].[Size]}}{{[Medium].[Unit]}}</span>
+                            {{/if}}
+                            {{#if [Small]}} 
+                                <span> {{[Small].[Size]}}{{[Small].[Unit]}}</span>
+                            {{/if}}
+
+ 
+                        {{/with}}
                 </div>
                 <div>
-                    Price: (Small) - (Largest)
+                    {{!-- If there is another size variation --}}
+                    {{#if [Product Price].[Large]}}
+                    Price:  &#8369;{{[Product Price].[Small]}} -  &#8369;{{[Product Price].[Large]}}
+                    {{else}}
+                    Price:  &#8369;{{[Product Price].[Small]}}
+                    {{/if}}
                 </div>
             </span>
-            <span id="productlist-buttonbox">
-                <div id="productlist-viewbutton"> 
-                    View
-                </div>
+            <span id="productbox-buttonbox">
+                <a href="/product?id={{_id}}">
+                    <div id="productbox-viewbutton"> View </div>
+                </a>
             </span>
         </div>
     </div>
