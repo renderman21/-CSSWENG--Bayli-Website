@@ -127,6 +127,13 @@ hr {
     font-weight: bold;
 }
 
+.btn-focus{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+
+}
+
 
 #quantity-box{
     display: flex;

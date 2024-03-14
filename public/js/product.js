@@ -24,6 +24,28 @@ window.onload = function () {
     infoDiv.replaceChildren();
     infoDiv.appendChild(parsedInfo);
 
+    const sizeButton = document.getElementsByClassName('size-button');
+
+    // The largest size will always be chosen
+    sizeButton[0].classList.add('btn-focus');
+
+    for(let i = 0; i < sizeButton.length; i++){
+        sizeButton[i].addEventListener("click", (e)=>{
+
+            e.currentTarget.classList.add('btn-focus');
+            for(let a = 0; a < sizeButton.length; a++){
+                if (sizeButton[a] == e.currentTarget){
+                    // Skip
+                    continue
+                }
+
+                if(sizeButton[a].classList.contains('btn-focus')){
+                    sizeButton[a].classList.remove('btn-focus');
+                }
+            }
+
+        });
+    }
 
 }
 
@@ -153,7 +175,7 @@ function increment() {
 function decrement() {
     const qA = document.getElementById('quantity-amount');
     var number = Number(qA.innerText);
-    if(number > 0){
+    if(number-1 > 0){
 
         const price = document.getElementById('price');
         var estimate = Number(price.innerText) / number;
