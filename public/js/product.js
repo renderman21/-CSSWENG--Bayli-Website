@@ -19,7 +19,6 @@ window.onload = function () {
 
     const parsedInfo = document.createElement('p');
     parsedInfo.innerHTML = docI.body.innerHTML;
-    parsedInfo.setAttribute('style', 'display:none;')
 
     infoDiv.replaceChildren();
     infoDiv.appendChild(parsedInfo);
@@ -155,36 +154,7 @@ async function changeProductSizeViaPic(size, id){
     p.innerText = 1;
     qA.replaceChildren();
     qA.appendChild(p);
+
+    // TODO: Change the sizes 
 }
 
-
-function increment() {
-    const qA = document.getElementById('quantity-amount');
-    var number = Number(qA.innerText) + 1;
-    const p = document.createElement('p');
-    p.innerText = number;
-    qA.replaceChildren();
-    qA.appendChild(p)
-
-    const price = document.getElementById('price');
-    var estimate = Number(price.innerText) * number;
-    price.innerText = estimate;
-
-}
-
-function decrement() {
-    const qA = document.getElementById('quantity-amount');
-    var number = Number(qA.innerText);
-    if(number-1 > 0){
-
-        const price = document.getElementById('price');
-        var estimate = Number(price.innerText) / number;
-        price.innerText = estimate;
-
-        const p = document.createElement('p');
-        number -= 1;
-        p.innerText = number ;
-        qA.replaceChildren();
-        qA.appendChild(p)
-    }
-}
