@@ -29,6 +29,7 @@
 
 #left-box > div {
     background-color: var(--left-box-bg);
+    cursor: pointer;
     border: 10px;
     height: 100px;
     width: 100px;
