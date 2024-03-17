@@ -1,5 +1,5 @@
 #notfound-base{
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - var(--navbar_height));
     background-color: var(--color12);
     
@@ -21,6 +21,8 @@
     color: var(--color11);
     font-size: 120px;
     font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
 
@@ -28,5 +30,8 @@
     color: gray;
     font-size: 60px;
     font-weight: 600;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
