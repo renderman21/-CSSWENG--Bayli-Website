@@ -6,16 +6,17 @@
 
     <div class="main">
 
+        {{#if Products}}
+
         <div id="productlist-base">
 
             <div id="productlist-options">
                 <div id="search-container">
-                    
-                    <form action="/search-product" method="get">
-                        <div id="search-icon">
-                            <button><i class="fa fa-search"></i></button>
-                        </div>
-                        <input type="text" placeholder="Looking for something?">
+                    <div id="search-icon">
+                            <button id="search-button"><i class="fa fa-search"></i></button>
+                    </div>
+                    <form id="search-form" method="get">
+                        <input id="search-bar" type="text" placeholder="Looking for something?" required>
                     </form>
                 </div>
                 <div id="filter-container">
@@ -30,14 +31,26 @@
 
 
             <div id="productlist-main">
+                
                 {{#each (allProductsToArray Products)}}
                     {{> productbox this}}
                 {{/each}}
                 
             </div>
 
-            
         </div>
+
+        {{else}}
+                <div id="notfound-base">
+
+                    <div id="notfound-container">
+                        <h1>No Results</h1>
+                        <p>product not found</p>
+                    </div>
+            
+                </div>
+
+        {{/if}}
 
     </div>
 
