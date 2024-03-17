@@ -1,5 +1,5 @@
 #notfound-base{
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - var(--navbar_height));
     background-color: var(--color12);
     
