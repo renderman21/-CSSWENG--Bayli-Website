@@ -19,7 +19,6 @@ window.onload = function () {
 
     const parsedInfo = document.createElement('p');
     parsedInfo.innerHTML = docI.body.innerHTML;
-    parsedInfo.setAttribute('style', 'display:none;')
 
     infoDiv.replaceChildren();
     infoDiv.appendChild(parsedInfo);
@@ -47,27 +46,37 @@ window.onload = function () {
         });
     }
 
+    const sizePicture = document.getElementsByClassName('sizePicture');
+
+    for(let i = 0; i < sizePicture.length; i++){
+        sizePicture[i].addEventListener("click", (e) =>{
+            let id = e.currentTarget.id;
+
+            let getId;
+
+            if(id.includes('L')){
+                getId = 'large'
+            }
+            else if(id.includes('M')){
+                getId = 'medium'
+            }
+            else{
+                getId = 'small'
+            }
+
+            for(let a = 0; a < sizeButton.length; a++){
+                if(sizeButton[a].id == getId){
+                    sizeButton[a].classList.add('btn-focus')
+                    continue
+                }
+
+                sizeButton[a].classList.remove('btn-focus');
+            }
+        })
+    }
+
 }
 
-function dropDownInfo() {
-    const productAddDesc = document.getElementById('product-additional-desc');
-    const p = (productAddDesc.childNodes)[0];
-
-    const arrowSpan = document.getElementById('arrow-span');
-    const i = (arrowSpan.childNodes)[1];
-
-    if (p.style.display == 'none' || i.className == 'down') {
-        p.style.display = 'inline';
-        i.classList.remove('down');
-        i.classList.add('up');
-    }
-    else if (p.style.display == 'inline' || i.className == 'up') {
-        p.style.display = 'none';
-        i.classList.remove('up');
-        i.classList.add('down');
-    }
-
-}
 
 async function fetchProduct(id){
     var product;
@@ -111,13 +120,6 @@ async function changeProductSize(size, id) {
     const priceBox = document.getElementById('price');
     priceBox.innerText = retProduct[0]['Product Price'][getSize];
 
-    // Set back to 1 on quantity
-    const qA = document.getElementById('quantity-amount');
-    const p = document.createElement('p');
-    p.innerText = 1;
-    qA.replaceChildren();
-    qA.appendChild(p);
-
 
 }
 
@@ -148,43 +150,5 @@ async function changeProductSizeViaPic(size, id){
     var retProduct = await fetchProduct(id);
     const priceBox = document.getElementById('price');
     priceBox.innerText = retProduct[0]['Product Price'][getSize];
-
-    // Set back to 1 on quantity
-    const qA = document.getElementById('quantity-amount');
-    const p = document.createElement('p');
-    p.innerText = 1;
-    qA.replaceChildren();
-    qA.appendChild(p);
 }
 
-
-function increment() {
-    const qA = document.getElementById('quantity-amount');
-    var number = Number(qA.innerText) + 1;
-    const p = document.createElement('p');
-    p.innerText = number;
-    qA.replaceChildren();
-    qA.appendChild(p)
-
-    const price = document.getElementById('price');
-    var estimate = Number(price.innerText) * number;
-    price.innerText = estimate;
-
-}
-
-function decrement() {
-    const qA = document.getElementById('quantity-amount');
-    var number = Number(qA.innerText);
-    if(number-1 > 0){
-
-        const price = document.getElementById('price');
-        var estimate = Number(price.innerText) / number;
-        price.innerText = estimate;
-
-        const p = document.createElement('p');
-        number -= 1;
-        p.innerText = number ;
-        qA.replaceChildren();
-        qA.appendChild(p)
-    }
-}

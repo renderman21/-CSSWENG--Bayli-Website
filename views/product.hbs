@@ -39,11 +39,8 @@
                     </div>
 
                     {{!-- Implement drop down --}}
-                    <div id="more-info-dropdown" onclick="dropDownInfo()">
-                            <h1> More Information </h1>
-                            <span style="margin-left:10px;" id="arrow-span">
-                                <i class="arrow down"></i>
-                            </span>
+                    <div id="more-info-dropdown">
+                            <h1> More Information: </h1>
                     </div>
                     
                     <div id="product-additional-desc">
@@ -74,32 +71,6 @@
                     </p>
                     
                 </div>
-
-                <div id="quantity-box">
-                    <span id="quantity-text">
-                        <p>Quantity: </p>
-                    </span>
-                    <span id="quantity-counter">
-
-                        <span onclick="decrement()"id="quantity-negative">
-
-                            <p>-</p>
-
-                        </span>
-
-                        <span id="quantity-amount">
-                            <p>
-                                1
-                            </p>
-                        </span>
-
-                        <span onclick="increment()"id="quantity-positive">
-                            <p>+</p>
-                        </span>
-
-                    </span>
-                </div>
-
                 <a id="store-button" href="https://shopee.ph/baylimarketing">
                     <h1>GO TO STORE</h1>
                 </a>
@@ -109,6 +80,8 @@
 
         </div>
     </div>
+    {{> footer}}
+
 </body>
 
 

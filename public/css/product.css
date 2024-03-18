@@ -29,6 +29,7 @@
 
 #left-box > div {
     background-color: var(--left-box-bg);
+    cursor: pointer;
     border: 10px;
     height: 100px;
     width: 100px;
@@ -115,109 +116,16 @@ hr {
 }
 
 #size-box button:hover{
-    background-color: black;
-    color: white;
+    text-decoration: underline;
     cursor: pointer;
-    font-weight: bold;
-}
-
-#size-box button:focus{
-    background-color: black;
-    color: white;
     font-weight: bold;
 }
 
 .btn-focus{
-    background-color: black;
-    color: white;
+    text-decoration: underline;
     font-weight: bold;
 
 }
-
-
-#quantity-box{
-    display: flex;
-    flex-direction: row;
-    height: 55px;
-    width: 300px;
-    margin-bottom: 40px;
-}
-
-#quantity-text{
-    margin-top: 15px;
-    margin-right: 10px ;
-}
-
-#quantity-counter{
-    display: flex;
-    flex-direction: row;
-    height: 50px;
-    width: 189px;
-}
-
-#quantity-negative{
-    height: 50px;
-    width: 50px;
-    background-color: var(--button-color);
-    border: 2px black solid;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-out 50ms;
-    transition: color 0.3s ease-out 50ms;
-}
-
-/* Hover effect */
-#quantity-negative:hover {
-    background-color: var(--quantity-button-hover-color);
-    color: white;
-    cursor: pointer;
-
-}
-
-
-#quantity-negative > p{
-    margin: auto;
-    margin-top:30%;
-    text-align: center;
-    font-weight: bold;
-}
-
-#quantity-amount{
-    height: 100%;
-    width:100px;
-    background-color: var(--quantity-amount-color);
-}
-
-#quantity-amount > p{
-    margin-left: 45%;
-    margin-top: 15%;
-    font-weight:bold;
-}
-
-#quantity-positive{
-    height: 50px;
-    width: 50px;
-    background-color: var(--button-color);
-    border: 2px black solid;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-out 50ms;
-    transition: color 0.3s ease-out 50ms;
-    
-}
-
-/* Hover effect */
-#quantity-positive:hover {
-    background-color: var(--quantity-button-hover-color);
-    color: white;
-    cursor: pointer;
-}
-
-#quantity-positive > p{
-    margin: auto;
-    margin-top:30%;
-    text-align: center;
-    font-weight: bold;
-}
-
 #store-button{
     background-color: var(--store-button-color);
     height:60px;
@@ -267,10 +175,4 @@ hr {
 #more-info-dropdown {
     width: 100;
     display: flex;
-}
-
-#more-info-dropdown > h1:hover{
-    cursor: pointer;
-    transform: scale(1,1);
-
 }
