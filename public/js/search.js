@@ -6,8 +6,8 @@ $(document).ready(function(){
 
 	search_bar.addEventListener('keypress', function (e) {
 		if (e.key === 'Enter' && $("#search-bar").val() != "") {
-
-			search_form.action = "/product-list-" + $("#search-bar").val()
+			
+			search_form.action = "/product-list"
 			search_form.submit()
 		}
 		
