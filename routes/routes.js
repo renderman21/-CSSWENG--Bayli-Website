@@ -15,8 +15,6 @@ app.get("/home", controller.getHome)
 
 app.get("/product-list", controller.getProductList)
 
-app.get("/product-list-:key", controller.getProductListSearch)
-
 app.get("/about-us", controller.getAboutUs)
 
 app.get("/product", controller.getProduct)
