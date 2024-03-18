@@ -36,6 +36,11 @@ a{
     cursor: pointer;
 }
 
+.main-home{
+    margin-top: var(--navbar_height);
+    width: 100%;
+}
+
 /* Prevent overlapping with the navbar */
 .main {
     width: 100%;
