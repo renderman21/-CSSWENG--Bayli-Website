@@ -22,7 +22,8 @@ const productSchema = mongoose.Schema({
     "Product Size": Object,
     "Picture": Object, 
     "Keywords" :Array,
-    "Best Seller": Boolean
+    "Best Seller": Boolean, 
+    "URL": Object
 });
 
 const Product = mongoose.model("Product", productSchema, "Products");
