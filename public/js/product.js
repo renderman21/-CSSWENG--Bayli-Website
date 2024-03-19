@@ -126,14 +126,14 @@ async function changeProductSize(size, id) {
         storeButton.setAttribute("style", "background-color: grey");
         storeButton.removeAttribute('href')
         let header = document.createElement('h1')
-        header.innerText = "NOT AVAILABLE IN SHOPEE"
+        header.innerText = "NOT AVAILABLE"
         storeButton.appendChild(header)
     }else{
         storeButton.replaceChildren()
         storeButton.removeAttribute("style");
         storeButton.setAttribute("href", "https://shopee.ph/" + retProduct[0]['URL'][getSize])
         let header = document.createElement('h1')
-        header.innerHTML = "GO TO STORE"
+        header.innerHTML = "GO TO SHOPEE"
         storeButton.appendChild(header)
     }
 
@@ -175,14 +175,14 @@ async function changeProductSizeViaPic(size, id){
         storeButton.setAttribute("style", "background-color: grey");
         storeButton.removeAttribute('href')
         let header = document.createElement('h1')
-        header.innerText = "NOT AVAILABLE IN SHOPEE"
+        header.innerText = "NOT AVAILABLE"
         storeButton.appendChild(header)
     }else{
         storeButton.replaceChildren()
         storeButton.removeAttribute("style");
         storeButton.setAttribute("href", "https://shopee.ph/" + retProduct[0]['URL'][getSize])
         let header = document.createElement('h1')
-        header.innerHTML = "GO TO STORE"
+        header.innerHTML = "GO TO SHOPEE"
         storeButton.appendChild(header)
     }
 
