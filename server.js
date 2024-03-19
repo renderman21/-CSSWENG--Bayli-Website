@@ -73,6 +73,24 @@ app.engine("hbs", exphbs.engine({
                 }
 
                 return arr[0]
+            }, 
+            urlToArray: function(url){
+
+                var arr = []
+
+                for(var key in url){
+                    arr.push(url[key])
+                }
+
+                return arr[0]
+                
+            },
+            checkUrl: function(url){
+                if (url == null){
+                    return false
+                }
+
+                return true
             }
     }
 }))

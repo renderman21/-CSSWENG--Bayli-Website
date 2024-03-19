@@ -71,9 +71,16 @@
                     </p>
                     
                 </div>
-                <a id="store-button" href="https://shopee.ph/baylimarketing">
-                    <h1>GO TO STORE</h1>
-                </a>
+
+                {{#if Product.[URL]}}
+                    <a id="store-button" href="https://shopee.ph/{{urlToArray Product.[URL]}}">
+                        <h1>GO TO STORE</h1>
+                    </a>
+                {{else}}
+                    <a id="store-button" style="background-color: grey;">
+                        <h1>NOT AVAILABLE IN SHOPEE</h1>
+                    </a>
+                {{/if}}
 
 
             </span>

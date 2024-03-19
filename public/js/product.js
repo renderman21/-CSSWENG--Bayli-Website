@@ -120,6 +120,24 @@ async function changeProductSize(size, id) {
     const priceBox = document.getElementById('price');
     priceBox.innerText = retProduct[0]['Product Price'][getSize];
 
+    const storeButton = document.getElementById('store-button');
+    if (retProduct[0]['URL'][getSize] == null){
+        storeButton.replaceChildren()
+        storeButton.setAttribute("style", "background-color: grey");
+        storeButton.removeAttribute('href')
+        let header = document.createElement('h1')
+        header.innerText = "NOT AVAILABLE IN SHOPEE"
+        storeButton.appendChild(header)
+    }else{
+        storeButton.replaceChildren()
+        storeButton.removeAttribute("style");
+        storeButton.setAttribute("href", "https://shopee.ph/" + retProduct[0]['URL'][getSize])
+        let header = document.createElement('h1')
+        header.innerHTML = "GO TO STORE"
+        storeButton.appendChild(header)
+    }
+
+
 
 }
 
@@ -150,5 +168,23 @@ async function changeProductSizeViaPic(size, id){
     var retProduct = await fetchProduct(id);
     const priceBox = document.getElementById('price');
     priceBox.innerText = retProduct[0]['Product Price'][getSize];
+
+    const storeButton = document.getElementById('store-button');
+    if (retProduct[0]['URL'][getSize] == null){
+        storeButton.replaceChildren()
+        storeButton.setAttribute("style", "background-color: grey");
+        storeButton.removeAttribute('href')
+        let header = document.createElement('h1')
+        header.innerText = "NOT AVAILABLE IN SHOPEE"
+        storeButton.appendChild(header)
+    }else{
+        storeButton.replaceChildren()
+        storeButton.removeAttribute("style");
+        storeButton.setAttribute("href", "https://shopee.ph/" + retProduct[0]['URL'][getSize])
+        let header = document.createElement('h1')
+        header.innerHTML = "GO TO STORE"
+        storeButton.appendChild(header)
+    }
+
 }
 
