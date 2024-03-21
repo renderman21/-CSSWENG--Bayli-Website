@@ -13,8 +13,6 @@ const express = require("express")
 
 const exphbs = require("express-handlebars")
 
-const bodyParser = require("body-parser")
-
 const routes = require("./routes/routes.js")
 
 const db = require("./models/db.js")
@@ -30,8 +28,15 @@ app.engine("hbs", exphbs.engine({
             getPicture: function(obj){
                 var arr = []
                 for (var key in obj.Picture){
-                    var newObj = {picture: obj.Picture[key], picType: key, id:obj._id};
-                    arr.push(newObj);
+                    if (key != "CPicture"){
+                        var newObj = {picture: obj.Picture[key], picType: key, id:obj._id};
+                        arr.push(newObj);
+                    }
+                }
+
+                for (var pic in obj.Picture.CPicture){
+                    var newObj = {picture: obj.Picture.CPicture[pic], picType: "CPicture", index: pic}
+                    arr.push(newObj)
                 }
 
         
@@ -91,6 +96,14 @@ app.engine("hbs", exphbs.engine({
                 }
 
                 return true
+            },
+            // Return true if the picture is not a customer review picture
+            isCPicture: function(picType){
+                if (picType != "CPicture"){
+                    return true
+                }
+                
+                return false
             }
     }
 }))

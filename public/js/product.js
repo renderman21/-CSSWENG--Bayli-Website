@@ -188,3 +188,10 @@ async function changeProductSizeViaPic(size, id){
 
 }
 
+function changeToCustomerPic(index){
+    const newImageSrc = document.getElementById('customer-' + index)
+    const focusedPicture = document.getElementById('focusedPicture');
+    focusedPicture.setAttribute('src', newImageSrc.getAttribute('src'))
+
+
+}
