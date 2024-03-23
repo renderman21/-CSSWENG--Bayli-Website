@@ -1,0 +1,78 @@
+:root{
+    --input-box-bg: #E8E8E8;
+    --submit-button-bg: #535AB4;
+    --submit-button-bg-hover: #424890;
+}
+#form-base {
+    padding: 50px;
+    display: flex;
+}
+
+#form-base > span{
+    width: 50%;
+    padding: 20px;
+}
+
+#form-left h1{
+    color: var(--color11);
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+#form-left h2{
+    font-weight: 200px;
+    margin-bottom: 10px;
+}
+
+#form-left div{
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#form-left .input-box{
+    background-color: var(--input-box-bg);
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+#form-left #message-box{
+    text-align: left;
+    overflow-y: auto;
+    background-color: var(--input-box-bg);
+    padding: 20px;
+    height: 300px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 20px;
+    resize: none;
+    word-wrap: break-word;
+}
+
+#send-button{
+    background-color: var(--submit-button-bg);
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: 100px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+#send-button:hover{
+    background-color: var(--submit-button-bg-hover);
+    cursor: pointer;
+}
+
+#form-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-right img{
+    max-height: 627px;
+    max-width: 679px;
+}
