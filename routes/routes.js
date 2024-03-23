@@ -21,4 +21,6 @@ app.get("/product", controller.getProduct)
 
 app.get("/get-product/:id", controller.fetchProduct);
 
+app.get("/form", controller.getForm)
+
 module.exports = app
