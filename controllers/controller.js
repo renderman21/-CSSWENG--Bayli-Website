@@ -14,7 +14,14 @@ const controller = {
     },
 
     getAboutUs: function(req, res){
-        res.render("aboutus")
+        res.render("aboutus", {
+            layout: 'aboutus-layout'
+        })
+    },
+    getForm: function(req, res){
+        res.render("form", {
+            layout: 'form-layout'
+        })
     },
 
     getProductList: async function (req, res){
