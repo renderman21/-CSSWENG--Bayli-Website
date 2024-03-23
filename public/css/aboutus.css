@@ -98,3 +98,34 @@
 
     overflow-wrap: break-word;
 }
+
+
+#about-page3{
+    width: 100%;
+    height: 300px;
+    background-color: var(--color12);
+    padding: 70px 0;
+    text-align: center;
+    overflow: auto;
+}
+
+#about-page3 h1{
+    color: var(--color11);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+#about-page3 i{
+    color: gray;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#about-page3 i:hover{
+    text-decoration: underline;
+}
+
+#about-page3 span{
+    position: absolute;
+    z-index: 1;
+}
