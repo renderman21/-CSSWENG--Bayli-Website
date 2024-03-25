@@ -1,29 +1,31 @@
 <body>
     {{> navbar}}
 
+    {{!-- TODO: Implement sanitization of inputs --}}
     <div class="main">
         <div id="form-base">
             <span id="form-left">
-                <form>
+                <form method="post" action="/send-form">
                     <h1>Reach out to us!</h1>
                     <div id="name">
                         <h2>Name</h2>
-                        <input class="input-box" name="user-name" type="text" placeholder="e.g. Juan Dela Cruz" required>
+                        <input class="input-box" name="name" type="text" placeholder="e.g. Juan Dela Cruz" required>
                     </div>
 
                     <div id="email">
                         <h2>Email</h2>
-                        <input class="input-box" name="user-email" type="email" placeholder="e.g. juan.dc@gmail.com" required>
+                        <input class="input-box" name="email" type="email" placeholder="e.g. juan.dc@gmail.com" required>
                     </div>
 
                     <div id="message">
                         <h2> How can we help?</h2>
-                        <textarea id="message-box" name="message-box" placeholder="Enter message" wrap="soft" maxlength="300" cols="33" rows="3" required></textarea>
+                        <textarea class="input-box" id="message-box" name="message" placeholder="Enter message" wrap="soft" maxlength="300" cols="33" rows="3" required></textarea>
                     </div>
 
+                    <input type="hidden" name="access_key" value="79cbe655-d1c6-4948-a081-70a18a35eec4">
 
                     <div id="send-button">
-                        <input type="submit" value="Send Message">
+                        <button type="submit"> Send Message </button>
                     </div>
                 </form>
             </span>

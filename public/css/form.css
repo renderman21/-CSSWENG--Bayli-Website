@@ -2,6 +2,7 @@
     --input-box-bg: #E8E8E8;
     --submit-button-bg: #535AB4;
     --submit-button-bg-hover: #424890;
+    --header-1-color: #ec1454;
 }
 #form-base {
     padding: 50px;
@@ -21,7 +22,8 @@
 }
 
 #form-left h2{
-    font-weight: 200px;
+    font-size: 20px;
+    font-weight: 300px;
     margin-bottom: 10px;
 }
 
@@ -61,6 +63,10 @@
     font-weight: bold;
 }
 
+#send-button button{
+    width: 100%;
+}
+
 #send-button:hover{
     background-color: var(--submit-button-bg-hover);
     cursor: pointer;
@@ -75,4 +81,38 @@
 #form-right img{
     max-height: 627px;
     max-width: 679px;
+}
+
+/* Form result */
+
+#form-result-base{
+    padding: 50px;
+    text-align: center;
+}
+
+#form-result-base h1{
+    font-size: 100px;
+    color: var(--header-1-color);
+    font-weight: bold;
+}
+
+#form-result-base > h2{
+    font-size: 30px;
+    font-weight: 100;
+}
+
+#home-redirect {
+    margin-top: 100px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: var(--submit-button-bg);
+    width: 100%;
+    border-radius: 30px;
+}
+
+#home-redirect:hover{
+    cursor: pointer;
+    background-color: var(--submit-button-bg-hover);
 }
