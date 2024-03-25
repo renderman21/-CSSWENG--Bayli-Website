@@ -23,4 +23,6 @@ app.get("/get-product/:id", controller.fetchProduct);
 
 app.get("/form", controller.getForm)
 
+app.post("/send-form", controller.sendForm);
+
 module.exports = app
