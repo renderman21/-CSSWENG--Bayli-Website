@@ -40,8 +40,38 @@
             </div>
 
             <div id="about-page3">
-                <h1> Have Inquiries or Suggestions?</h1>
-                <a href="/form"><i>Reach out to us! <span class="material-symbols-outlined">trending_flat</span></i></a>
+
+                <div id="form-base">
+                    <span id="form-left">
+                        <form method="post" action="/send-form">
+                            <h1>Reach out to us!</h1>
+                            <div id="name">
+                                <h2>Name</h2>
+                                <input class="input-box" name="name" type="text" placeholder="e.g. Juan Dela Cruz" required>
+                            </div>
+
+                            <div id="email">
+                                <h2>Email</h2>
+                                <input class="input-box" name="email" type="email" placeholder="e.g. juan.dc@gmail.com" required>
+                            </div>
+
+                            <div id="message">
+                                <h2> How can we help?</h2>
+                                <textarea class="input-box" id="message-box" name="message" placeholder="Enter message" wrap="soft" maxlength="300" cols="33" rows="3" required></textarea>
+                            </div>
+
+                            <input type="hidden" name="access_key" value="79cbe655-d1c6-4948-a081-70a18a35eec4">
+
+                            <div id="send-button">
+                                <button type="submit"> Send Message </button>
+                            </div>
+                        </form>
+                    </span>
+
+                    <span id="form-right">
+                        <img src="/photos/cat_dog.png">
+                    </span>
+                </div>
             </div>
 
         </div>
