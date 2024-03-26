@@ -23,35 +23,46 @@ const controller = {
 
         // Check if query exists
         if ("q" in req.query){
-            console.log("there is query")
+            
             let {q} = req.query
+            q = q.toLowerCase()
+            console.log("There is query: " + q)
             
             let searched_products = []
             let i = 0
             for(let prod of products){
 
-                if(prod["Product Name"] && prod["Product Description"] && prod["Product Additional Info"]){
-    
-                    let product_name = prod["Product Name"].toLowerCase()
-                    let product_desc = prod["Product Description"].toLowerCase()
-    
-                    // will only send products that matches the search key
-                    if (product_name.includes(q) || product_desc.includes(q)){
-                        let product = {
-                            "_id": prod["_id"],
-                            "Product Name": prod["Product Name"],
-                            "Product Description": prod["Product Description"],
-                            "Product Additional Info": prod["Product Additional Info"],
-                            "Product Price": prod["Product Price"],
-                            "Product Type": prod["Product Type"],
-                            "Product Size": prod["Product Size"],
-                            "Picture": prod["Picture"]
-                        }
-                        console.log("Found: " + product["Product Name"]);
-                        searched_products[i] = product; 
-                        i++;
-                    }
+                let product_name = prod["Product Name"].toLowerCase()
+                let product_desc = prod["Product Description"].toLowerCase()
+                let product_type = prod["Product Type"]
+
+                let product_keywords = []
+                for(let keywords of prod["Keywords"]){
+                    product_keywords.push(keywords.toLowerCase())
                 }
+                
+    
+                // will only send products that matches the search key
+                if (product_name.includes(q) || product_desc.includes(q) || product_keywords.includes(q) || product_type == q){
+                    let product = {
+                        "_id": prod["_id"],
+                        "Product Name": prod["Product Name"],
+                        "Product Description": prod["Product Description"],
+                        "Product Additional Info": prod["Product Additional Info"],
+                        "Product Price": prod["Product Price"],
+                        "Product Type": prod["Product Type"],
+                        "Product Size": prod["Product Size"],
+                        "Picture": prod["Picture"],
+                        "Keywords": prod["Keywords"],
+                        "Best Seller": prod["Best Seller"],
+                        "URL": prod["URL"]
+
+                    }
+                    console.log("Found: " + product["Product Name"]);
+                    searched_products[i] = product; 
+                    i++;
+                    }
+                
             }
 
             res.render("productlist", {

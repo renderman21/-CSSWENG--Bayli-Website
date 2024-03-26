@@ -1,7 +1,7 @@
 #notfound-base{
     width: 100%;
     height: calc(100vh - var(--navbar_height));
-    background-color: var(--color12);
+    
     
     display: flex;
     align-items: center;
