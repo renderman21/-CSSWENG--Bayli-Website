@@ -7,9 +7,10 @@
     --desc-color: #757575;
     --button-color: white;
     --quantity-amount-color: #E6E6E6;
-    --store-button-color: #144068;
+    --store-button-color: #535AB4;
     --quantity-button-hover-color: black;
     --arrow-color: #757575;
+    --back-button-color: #535AB4;
 }
 
 
@@ -182,8 +183,11 @@ hr {
     -webkit-transform: rotate(-135deg);
 }
 
-
-#more-info-dropdown {
-    width: 100;
-    display: flex;
+#back-button{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 70px;
+    left: 100px;
+    background-color: var(--back-button-color);
 }
