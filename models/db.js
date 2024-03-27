@@ -20,7 +20,9 @@ const productSchema = mongoose.Schema({
     "Product Price": Object,
     "Product Type": Number,
     "Product Size": Object,
-    "Picture": Object
+    "Picture": Object, 
+    "Keywords" :Array,
+    "Best Seller": Boolean
 });
 
 const Product = mongoose.model("Product", productSchema, "Products");
