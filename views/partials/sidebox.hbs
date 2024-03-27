@@ -1,3 +1,10 @@
-<div onclick="changeProductSizeViaPic('{{picType}}', '{{id}}')">
-    <img src="{{picture}}" class="sizePicture"id="{{picType}}"> 
-</div>
+
+{{#if (isCPicture picType) }}
+    <div onclick="changeProductSizeViaPic('{{picType}}', '{{id}}')">
+        <img src="{{picture}}" class="sizePicture"id="{{picType}}"> 
+    </div>
+{{else}}
+    <div onclick="changeToCustomerPic({{index}})">
+        <img src="{{picture}}" class="reviewPicture" id="customer-{{index}}">
+    </div>
+{{/if}}

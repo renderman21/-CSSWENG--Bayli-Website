@@ -7,9 +7,10 @@
     --desc-color: #757575;
     --button-color: white;
     --quantity-amount-color: #E6E6E6;
-    --store-button-color: #144068;
+    --store-button-color: #535AB4;
     --quantity-button-hover-color: black;
     --arrow-color: #757575;
+    --back-button-color: #535AB4;
 }
 
 
@@ -25,20 +26,22 @@
     display: flex;
     flex-direction: column;
     margin-right: 100px;
+    height: 500px;
 }
 
-#left-box > div {
+#left-box div {
     background-color: var(--left-box-bg);
     cursor: pointer;
     border: 10px;
     height: 100px;
     width: 100px;
+    overflow: hidden;
     margin-bottom:50px;
     box-shadow: var(--box-shadow);
     transition:all .2s ease-in-out;
 }
 
-#left-box > div:hover{
+#left-box div:hover{
     transform: scale(1.1);
     box-shadow: var(--lighter-box-shadow);
 }
@@ -51,10 +54,19 @@
 
 #main-box > div {
     background-color: var(--left-box-bg);
+    text-align: center;
     border: 10px;
     height:620px;
     width: 620px;
+    max-height: 620px;
+    max-width: 620px;
     box-shadow: var(--box-shadow);
+    
+}
+
+#main-box img{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #right-box {
@@ -171,8 +183,11 @@ hr {
     -webkit-transform: rotate(-135deg);
 }
 
-
-#more-info-dropdown {
-    width: 100;
-    display: flex;
+#back-button{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 70px;
+    left: 100px;
+    background-color: var(--back-button-color);
 }

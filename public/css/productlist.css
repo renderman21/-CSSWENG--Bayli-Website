@@ -2,6 +2,7 @@
     --productlist_options_height: 80px;
     --view-button-color: #535AB4;
     --picture-bg-color: #ebebeb;
+    --sort-box-bg-color: #F3F3F3;
 }
 
 #productlist-base{
@@ -209,4 +210,27 @@
     margin-top: 20px;
     font-weight: bold;
     color:white;
+}
+
+#filter-icon:hover{
+    cursor: pointer;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+}
+
+#sort-box{
+    background-color: var(--sort-box-bg-color);
+    border: solid 1px;
+    display: block;
+    position: absolute;
+    height: 225px;
+    width: 200px;
+    top: 140px;
+    right: 50px;
+}
+
+#sort-alphabetically:hover{
+    cursor: pointer;
+    background-color: #e2e2e2;
+    border-radius: 5px;
 }
