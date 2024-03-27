@@ -5,12 +5,11 @@
     --product-name-color: #ec1454;
     --line-color: #D9D9D9;
     --desc-color: #757575;
-    --button-color: white;
-    --quantity-amount-color: #E6E6E6;
     --store-button-color: #535AB4;
     --quantity-button-hover-color: black;
     --arrow-color: #757575;
     --back-button-color: #535AB4;
+    --darken-button-color: #424890;
 }
 
 
@@ -147,6 +146,11 @@ hr {
     justify-content: center;
 }
 
+#store-button:hover{
+    background-color: var(--darken-button-color);
+}
+
+
 #store-button > h1{
     color: white;
     font-weight: bolder;
@@ -188,6 +192,22 @@ hr {
     width: 100px;
     position: absolute;
     bottom: 70px;
-    left: 100px;
+    left: 90px;
     background-color: var(--back-button-color);
+}
+
+#back-button:hover{
+    background-color: var(--darken-button-color);
+    cursor: pointer;
+}
+
+#back-button span{
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    font-weight: bolder;
 }
