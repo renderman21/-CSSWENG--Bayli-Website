@@ -26,7 +26,7 @@ const controller = {
             
             let {q} = req.query
             q = q.toLowerCase()
-            console.log("There is query: " + q)
+            
             
             let searched_products = []
             let i = 0
@@ -58,7 +58,7 @@ const controller = {
                         "URL": prod["URL"]
 
                     }
-                    console.log("Found: " + product["Product Name"]);
+                    
                     searched_products[i] = product; 
                     i++;
                     }
