@@ -20,13 +20,17 @@
                     </form>
                 </div>
                 <div id="filter-container">
-                    <p id="sort-alphabetically">A-Z</p>
+                    <p id="sort-alphabetically" onclick="sortAlphabetical()">A-Z</p>
                     <p>|</p>
                     <div id="filter-icon">
                         <i class="fa fa-filter"></i>
                     </div>
-                    <div id="sort-box" style="visibility:hidden">
 
+                    <div id="sort-box" style="visibility:hidden">
+                        <div id='bs' onclick="bestSellers()">Best Sellers</div>
+                        <div id='pri' onclick="price()">Price</div>
+                        <div id='av' onclick="availability()">Availability</div>
+                        <div id='s' onclick="size()">Size</div>
                     </div>
                     
                 </div>
