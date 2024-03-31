@@ -2,7 +2,7 @@
 
 :root{
     --navbar_height: 80px;
-    --footer_height: 460px;
+    --footer_height: 400px;
 
     --navbar-color: #a4e5ac;
     --footer-color: #535AB4;
@@ -127,8 +127,8 @@ a{
     height: var(--footer_height);
     background-color: var(--footer-color);
     
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     padding-left: 40px;
     padding-right: 40px;
 
@@ -142,6 +142,121 @@ a{
     
 
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-title{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+
+    margin-bottom: 20px;
+
+}
+
+.footer-content{
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer-content p{
+    margin-bottom: 15px;
+}
+
+.footer-content a:hover{
+    text-decoration: underline;
+}
+
+.footer-content b{
+    font-weight: 600;
+}
+
+#footer-products-content{
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+
+#footer-products-content p{
+    margin-bottom: 15px;
+}
+
+#footer-products-content a:hover{
+    text-decoration: underline;
+}
+
+#content-left{
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#content-right{
+    width: 100px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+#footer-products{
+    
+    width: max-content;
+    height: 85%;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+#footer-about{
+    
+    width: max-content;
+    height: 85%;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-shopee{
+    
+    width: max-content;
+    height: 85%;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-contact{
+    
+    width: max-content;
+    height: 85%;
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #footer-mid{
@@ -183,10 +298,40 @@ a{
     height: 40px;
     border-radius: 25px;
     margin: 10px;
-    background-color: var(--picture-bg-color);
-
     
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.facebook-icon{
+    
+    background-image: url(../photos/facebook_icon.png);
+    background-position: center;
+    background-size: 105%;
+    background-repeat: no-repeat;
+}
+
+.shopee-icon{
+    
+    background-image: url(../photos/shopee_icon.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+.shoppedia-icon{
+    
+    background-image: url(../photos/shoppedia_icon.png);
+    background-position: center bottom;
+    background-size: 120%;
+    background-repeat: no-repeat;
+
+    filter: grayscale(100%);
+}
+
 
 
 
