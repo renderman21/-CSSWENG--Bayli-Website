@@ -14,9 +14,52 @@ const controller = {
     },
 
     getAboutUs: function(req, res){
-        res.render("aboutus")
+        res.render("aboutus", {
+            layout: 'aboutus-layout'
+        })
+    },
+    getForm: function(req, res){
+        res.render("form", {
+            layout: 'form-layout'
+        })
     },
 
+    sendForm: function(req, res){
+
+        const toSend = JSON.stringify(req.body)
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept' : 'application/json'
+            },
+            body: toSend
+        })
+        .then(async (resp) => {
+            let j = await resp.json();
+            if (resp.status == 200){
+                // Go to new page
+                res.render('form-result',{
+                    result: true,
+                    layout: 'form-layout'
+                })
+            }
+            else{
+                res.render('form-result', {
+                    layout: 'form-layout', 
+                    result: false
+                })
+            }
+        })
+        .catch(error=>{
+            res.render('form-result', {
+                layout: 'form-layout', 
+                result: false
+            })
+        })
+
+    },
     getProductList: async function (req, res){
         const products = await db.getAllProducts();
         // Turn this into an array of objects
