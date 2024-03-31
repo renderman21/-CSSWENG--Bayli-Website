@@ -10,6 +10,29 @@
 
 
     <div class="productbox-right">
+        {{#if [Best Seller]}}
+            <input id='bestSeller' type="hidden" value="{{[Best Seller]}}"> 
+        {{/if}}
+
+        {{#if [Product Price].[Large]}}
+            <input id="lprice" type="hidden" value="{{[Product Price].[Large]}}">
+        {{else}}
+            <input id="lprice" type="hidden" value="{{[Product Price].[Small]}}">
+        {{/if}}
+
+        {{#if [URL]}}
+            <input id="avail" type="hidden">
+        {{/if}}
+
+
+        {{#if [Product Size].[Large]}}
+            <input id="lsize" type="hidden" value="{{convertToML [Product Size].[Large].[Size] [Product Size].[Large].[Unit]}}">
+        {{else}}
+            <input id="lsize" type="hidden" value="{{convertToML [Product Size].[Small].[Size] [Product Size].[Small].[Unit]}}">
+            
+        {{/if}}
+
+
         <div id="productbox-name">
             <h1> {{"Product Name"}}</h1>
         </div>

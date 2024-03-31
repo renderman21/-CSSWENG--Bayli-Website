@@ -78,6 +78,16 @@ app.engine("hbs", exphbs.engine({
                 }
 
                 return arr[0]
+
+            },
+
+            convertToML: function(size, unit){
+                if (unit == 'L'){
+                    return size * 1000
+                }
+
+                return size
+
             }, 
             urlToArray: function(url){
 
@@ -104,6 +114,7 @@ app.engine("hbs", exphbs.engine({
                 }
                 
                 return false
+
             }
     }
 }))
