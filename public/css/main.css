@@ -59,12 +59,11 @@ a{
     flex-wrap: wrap;
     padding:10px;
     position: fixed;
-    z-index: 2;
 
 }
 
 #nav-left{
-    width: 50%;
+    width: max-content;
     height: 100%;
 
 }
@@ -75,7 +74,7 @@ a{
     margin-left: 90px;
     
 
-    float: left;
+    
 }
 
 #nav-logo img{
@@ -84,41 +83,56 @@ a{
 
 
 #nav-right{
-    width: 50%;
+    width: max-content;
     height: 100%;
 
-    flex-direction: row-reverse;
+    margin-left: auto;
+    
     display: flex;
 }
 
 
 #nav-options{
+    
     width: fit-content;
     margin:auto;
     margin-right: 58px;
-    float: right;
     
     color: var(--color1);
     font-weight: bold;
 }
 
-#nav-options ul li{
-
-    display: inline;
-    float: left;
-}
-
-#nav-options ul li a:hover{
-    background-color: var(--color9);
-
-    transition: 0.2s;
+#nav-options ul{
+    display: flex;
+    
 }
 
 #nav-options ul li a{
     font-size: larger;
-    padding: 15px 30px;
-    border: 0px solid;
-    border-radius: 15px;
+    margin: 0 25px;
+}
+
+#nav-options ul li a{
+    padding-bottom: 12px; /* gap of the underline to the text */
+    position: relative; 
+}
+
+#nav-options ul li a::after{
+    content: "";
+    position: absolute;
+    height: 3px; /* thickness of the line */
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(3px);
+    background: var(--color9);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#nav-options ul li a:hover::after{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -157,7 +171,7 @@ a{
 
 .footer-content{
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
 
     display: flex;
@@ -166,7 +180,7 @@ a{
 }
 
 .footer-content p{
-    margin-bottom: 15px;
+    margin-bottom: 11px;
 }
 
 .footer-content a:hover{
@@ -179,7 +193,7 @@ a{
 
 #footer-products-content{
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 300;
     width: 100%;
     height: 100%;
@@ -188,7 +202,7 @@ a{
 }
 
 #footer-products-content p{
-    margin-bottom: 15px;
+    margin-bottom: 11px;
 }
 
 #footer-products-content a:hover{
@@ -235,7 +249,7 @@ a{
     flex-direction: column;
 }
 
-#footer-shopee{
+#footer-form{
     
     width: max-content;
     height: 85%;
