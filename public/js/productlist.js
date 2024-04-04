@@ -1,5 +1,13 @@
 // Apply same technique in product.js
 let origList = []
+
+// Global variables
+const bsSwitch = {'b': true}
+const obj = {'isAscend': true}
+let priceTog = [0]
+let avTog = [0]
+let sizeTog = [0]
+
 window.onload = function () {
     const parser = new DOMParser();
     const descArr = document.getElementsByClassName('productbox-desc');
@@ -42,6 +50,7 @@ window.onload = function () {
 
 }
 
+
 function replaceMainProductChildren(toReplace){
 
     let mainProduct = document.getElementById('productlist-main');
@@ -55,7 +64,51 @@ function replaceMainProductChildren(toReplace){
     }
 }
 
-const obj = {'isAscend': true};
+// Reset everytime one of the filter's been pressed
+function sortAlphabeticalReset(){
+    obj.isAscend = true
+    var sortBtn = document.getElementById('sort-alphabetically');
+    sortBtn.innerText = 'A-Z'
+
+    sortBtn.classList.remove('focused');
+}
+
+function filterButtonReset(key){
+    var fbtn = document.getElementsByClassName('filter');
+
+    for(let i = 0; i < fbtn.length; i++){
+
+        fbtn[i].classList.remove("focused")
+    }
+
+    switch (key) {
+        case 'bs':
+            obj.isAscend = true
+            priceTog[0] = avTog[0]= sizeTog[0] = 0
+            replaceMainProductChildren(origList)
+            break;
+        case 'pri':
+            obj.isAscend = bsSwitch.b = true
+            avTog[0] = sizeTog[0] = 0
+            replaceMainProductChildren(origList)
+            break;
+        case 'av':
+            obj.isAscend = bsSwitch.b = true
+            sizeTog[0] = priceTog[0] = 0
+            replaceMainProductChildren(origList)
+            break;
+        case 's':
+            obj.isAscend = true
+            priceTog[0] = avTog[0] = 0
+            replaceMainProductChildren(origList)
+            break;
+        case 'a':
+            bsSwitch.b = true
+            priceTog[0] = avTog[0] = sizeTog[0] = 0
+            replaceMainProductChildren(origList)
+            break
+    }
+}
 
 function sortAlphabetical(){
     var productBox = document.getElementsByClassName('productbox');
@@ -64,6 +117,8 @@ function sortAlphabetical(){
     for (let i = 0; i < productBox.length; i++){
         names.push(productBox[i].querySelector('.productbox-right').querySelector('#productbox-name').innerText)
     }
+
+    filterButtonReset('a')
 
     if (obj.isAscend){
         names.sort((a,b) => {
@@ -83,7 +138,6 @@ function sortAlphabetical(){
         obj.isAscend = true;
         sortBtn.innerText = 'Z-A';
     }
-
 
     // Darken permanently the button
     sortBtn.classList.add('focused');
@@ -107,13 +161,16 @@ function sortAlphabetical(){
     replaceMainProductChildren(newProdBox);
 }
 
-const bsSwitch = {'b': true}
+
 
 function bestSellers(){
     var productBox = document.getElementsByClassName('productbox');
     var btn = document.getElementById('bs');
-    
     var bestArr = []
+
+    sortAlphabeticalReset()
+    filterButtonReset('bs')
+
 
     for(let i = 0; i < productBox.length; i++){
         if (productBox[i].querySelector("#bestSeller") != null){
@@ -141,12 +198,18 @@ function bestSellers(){
 }
 
 
-const priceTog = [0]
+
 function price(){
     var productBox = document.getElementsByClassName('productbox');
     var btn = document.getElementById('pri');
-
     var prices = []
+
+    sortAlphabeticalReset()
+    filterButtonReset('pri')
+
+
+
+
     for(let i = 0; i < productBox.length; i++){
         prices.push(productBox[i])
     }
@@ -187,11 +250,14 @@ function price(){
 
 }
 
-avTog = [0]
 function availability(){
     var productBox = document.getElementsByClassName('productbox');
     var btn = document.getElementById('av')
     var avArr = []
+
+    sortAlphabeticalReset()
+    filterButtonReset('av')
+
 
     for(let i = 0; i < productBox.length; i++){
         if (productBox[i].querySelector('#avail')){
@@ -213,11 +279,14 @@ function availability(){
 
 }
 
-sizeTog = [0]
 function size(){
     var productBox = document.getElementsByClassName('productbox');
     var btn = document.getElementById('s');
     var sArr = []
+
+    sortAlphabeticalReset()
+    filterButtonReset('s')
+
 
     for (let i = 0; i < productBox.length; i++){
         sArr.push(productBox[i])
