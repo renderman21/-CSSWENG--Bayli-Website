@@ -36,12 +36,11 @@
     width: 750px;
     height: 100%;
     padding: 120px 80px;
-    
 }
 
 #home-page #page-left h1{
     color: var(--color11);
-    font-size: 75px;
+    font-size: 100px;
     font-weight: bolder;
 }
 
