@@ -60,6 +60,7 @@ a{
     flex-wrap: wrap;
     padding:10px;
     position: fixed;
+    z-index: 2;
 
 }
 
